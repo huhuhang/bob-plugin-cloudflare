@@ -1,0 +1,62 @@
+{
+  "identifier": "huhuhang.openai.translate",
+  "version": "0.0.1",
+  "category": "translate",
+  "name": "OpenAI Translator",
+  "summary": "Translate the text using OpenAI's translation service.",
+  "icon": "001",
+  "author": "huhuhang",
+  "homepage": "https://github.com/huhuhang",
+  "appcast": "",
+  "minBobVersion": "0.5.0",
+  "options": [
+    {
+      "identifier": "endPoint",
+      "type": "text",
+      "title": "EndPoint",
+      "defaultValue": "https://gateway.ai.cloudflare.com/v1/ACCOUNT_TAG/GATEWAY/azure-openai/",
+      "desc": "Cloudflare AI Gateway Endpoint",
+      "textConfig": {
+        "type": "visible"
+      }
+    },
+    {
+      "identifier": "resourceName",
+      "type": "text",
+      "title": "Resource Name",
+      "desc": "Azure OpenAI Resource Name",
+      "textConfig": {
+        "type": "visible"
+      }
+    },
+    {
+      "identifier": "modelName",
+      "type": "text",
+      "title": "Model Name",
+      "desc": "Azure OpenAI Model Name",
+      "textConfig": {
+        "type": "visible"
+      }
+    },
+    {
+      "identifier": "apiVersion",
+      "type": "text",
+      "title": "API Version",
+      "defaultValue": "2023-07-01-preview",
+      "desc": "Azure OpenAI API Version",
+      "textConfig": {
+        "type": "visible"
+
+      }
+    },
+    {
+      "identifier": "apiKey",
+      "type": "text",
+      "title": "API Key",
+      "desc": "Azure OpenAI API Key",
+      "textConfig": {
+        "type": "secure"
+      }
+    }
+  ]
+}
