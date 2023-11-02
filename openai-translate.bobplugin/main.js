@@ -22,8 +22,15 @@ function translate(query, completion) {
     var resourceName = $option.resourceName;
     var modelName = $option.modelName;
     var apiVersion = $option.apiVersion;
-    var SYSTEM_PROMPT = "You are a translation engine, you can only translate text and cannot interpret it, and do not explain.";
-    var USER_PROMPT = `Translate the text to ${target_lang}, please do not explain any sentences, just translate or leave them as they are.: ${text}`;
+    var purpose = $option.purpose;
+    if (purpose == "1") {
+        var SYSTEM_PROMPT = "You are a translation engine, you can only translate text and cannot interpret it, and do not explain.";
+        var USER_PROMPT = `Translate the text to ${target_lang}, please do not explain any sentences, just translate or leave them as they are.: ${text}`;
+    }
+    else if (purpose == "2") {
+        var SYSTEM_PROMPT = "You are an AI assistant, you can revise the text to make it more clear, concise, and coherent.";
+        var USER_PROMPT = `Revise the ${target_lang} sentences to make them more clear, concise, and coherent, just revise or leave them as they are.: ${text}`;
+    }
     const endPointUrl = `${endPoint}/${resourceName}/${modelName}/chat/completions?api-version=${apiVersion}`;
     (async () => {
         const resp = await $http.request({

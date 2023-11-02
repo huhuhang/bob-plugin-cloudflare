@@ -1,15 +1,31 @@
 {
-  "identifier": "huhuhang.openai.translate",
+  "identifier": "huhuhang.azure.openai.cloudflare",
   "version": "0.0.1",
   "category": "translate",
-  "name": "OpenAI Translator",
-  "summary": "Translate the text using OpenAI's translation service.",
+  "name": "OpenAI Translator and Refiner",
+  "summary": "Using Azure OpenAI service and Cloudflare AI Gateway to translate and refine text.",
   "icon": "001",
   "author": "huhuhang",
   "homepage": "https://github.com/huhuhang",
   "appcast": "",
   "minBobVersion": "0.5.0",
   "options": [
+    {
+      "identifier": "purpose",
+      "type": "menu",
+      "title": "功能",
+      "defaultValue": "1",
+      "menuValues": [
+        {
+          "title": "翻译",
+          "value": "1"
+        },
+        {
+          "title": "润色",
+          "value": "2"
+        }
+      ]
+    },
     {
       "identifier": "endPoint",
       "type": "text",
@@ -46,7 +62,6 @@
       "desc": "Azure OpenAI API Version",
       "textConfig": {
         "type": "visible"
-
       }
     },
     {
