@@ -8,4 +8,5 @@
 1. 克隆本仓库，打开目录；
 2. 双击 `.bobplugin` 文件夹即可安装完成。
 
-![Alt text](20231102-17-12-23-2kItDXMp.png)
+![Alt text](./20231103-10-47-15-bccfQXwi@2x.png)
+![Alt text](./20231102-17-12-23-2kItDXMp.png)
