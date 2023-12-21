@@ -1,6 +1,6 @@
 {
   "identifier": "huhuhang.azure.openai.cloudflare",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "category": "translate",
   "name": "OpenAI Translator and Refiner",
   "summary": "Using Azure OpenAI service and Cloudflare AI Gateway to translate and refine text.",
@@ -17,12 +17,16 @@
       "defaultValue": "1",
       "menuValues": [
         {
-          "title": "翻译",
+          "title": "普通翻译",
           "value": "1"
         },
         {
-          "title": "润色",
+          "title": "普通润色",
           "value": "2"
+        },
+        {
+          "title": "超级翻译",
+          "value": "1"
         }
       ]
     },
