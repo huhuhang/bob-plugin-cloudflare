@@ -1,6 +1,6 @@
 {
   "identifier": "huhuhang.azure.openai.cloudflare",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "category": "translate",
   "name": "OpenAI Translator and Refiner",
   "summary": "Using Azure OpenAI service and Cloudflare AI Gateway to translate and refine text.",
