@@ -23,7 +23,7 @@ function translate(query, completion) {
     var purpose = $option.purpose;
     if (purpose == "1") {
         var SYSTEM_PROMPT = "您是一个翻译引擎, 您只能翻译文本, 不能解释文本, 也不需要解释文本。";
-        var USER_PROMPT = `请将下面的文本从${source_lang}翻译成${target_lang}, 请不要解释翻译结果或增加补充说明, 只需要输出翻译后的${target_lang}文本: ${text}`;
+        var USER_PROMPT = `请将下面的文本从${source_lang}翻译成${target_lang}, 请不要解释翻译结果或增加补充说明, 只需要保持原有的格式不变, 输出翻译后的${target_lang}文本: ${text}`;
     }
     else if (purpose == "2") {
         var SYSTEM_PROMPT = "You are an AI assistant, you can revise the text to make it more clear, concise, and coherent.";
@@ -41,17 +41,9 @@ function translate(query, completion) {
 - 全角括号换成半角括号, 并在左括号前面加半角空格, 右括号后面加半角空格;
 - 输入格式为 Markdown 格式, 输出格式也必须保留原始 Markdown 格式;
 - 在翻译专业术语时, 第一次出现时要在括号里面写上${source_lang}原文, 例如: "生成式 AI (Generative AI)", 之后就可以只写${target_lang}了;
-- 以下是常见的 AI 相关术语词汇对应表（English -> ${target_lang}:
-  - Transformer -> Transformer
-  - Token -> Token
-  - LLM/Large Language Model -> 大语言模型
-  - Zero-shot -> 零样本
-  - Few-shot -> 少样本
-  - AI Agent -> AI 智能体
-  - AGI -> 通用人工智能
 
 策略:
-分三步进行翻译工作, 并打印每步的结果: 
+分三步进行翻译工作: 
 
 1. 根据${source_lang}内容直译, 保持原有格式, 不要遗漏任何信息;
 2. 根据第一步直译的结果, 指出其中存在的具体问题, 要准确描述, 不宜笼统的表示, 也不需要增加原文不存在的内容或格式, 包括不仅限于: 
@@ -61,21 +53,9 @@ function translate(query, completion) {
 - 晦涩难懂, 不易理解, 可以尝试给出解释;
 
 3. 根据第一步直译的结果和第二步指出的问题, 重新进行意译, 保证内容的原意的基础上, 使其更易于理解, 更符合${target_lang}的表达习惯, 同时保持原有的格式不变
-返回格式如下, "{xxx}"表示占位符: 
+返回意译结果. 请不要解释翻译结果或增加补充说明, 保持原有的格式不变, 返回意译后的${target_lang}文本. 现在请按照上面的要求从第一行开始翻译以下内容为${target_lang}: 
 
-→ 直译
-
-{直译结果}
-
-→ 问题
-
-{直译的具体问题列表}
-
-→ 意译
-
-{意译结果}
-
-现在请按照上面的要求从第一行开始翻译以下内容为${target_lang}, 请不要解释翻译结果或增加补充说明, 只需要输出翻译后的${target_lang}文本: ${text}`;
+${text}`;
     }
     const endPointUrl = `${endPoint}/${resourceName}/${modelName}/chat/completions?api-version=${apiVersion}`;
     (async () => {
