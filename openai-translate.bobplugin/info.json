@@ -4,7 +4,7 @@
   "category": "translate",
   "name": "OpenAI Translator and Refiner",
   "summary": "Using Azure OpenAI service and Cloudflare AI Gateway to translate and refine text.",
-  "icon": "001",
+  "icon": "",
   "author": "huhuhang",
   "homepage": "https://github.com/huhuhang",
   "appcast": "",

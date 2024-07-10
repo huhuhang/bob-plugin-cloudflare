@@ -1,0 +1,53 @@
+{
+  "identifier": "huhuhang.claude.translator",
+  "version": "0.0.1",
+  "category": "translate",
+  "name": "Claude Translator and Refiner",
+  "summary": "Using Claude to translate and refine text.",
+  "icon": "",
+  "author": "huhuhang",
+  "homepage": "https://github.com/huhuhang",
+  "appcast": "",
+  "minBobVersion": "0.5.0",
+  "options": [
+    {
+      "identifier": "purpose",
+      "type": "menu",
+      "title": "功能",
+      "defaultValue": "1",
+      "menuValues": [
+        {
+          "title": "普通翻译",
+          "value": "1"
+        },
+        {
+          "title": "普通润色",
+          "value": "2"
+        },
+        {
+          "title": "超级翻译",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "identifier": "modelName",
+      "type": "text",
+      "title": "Model Name",
+      "defaultValue": "claude-3-haiku-20240307",
+      "desc": "Claude Model Name",
+      "textConfig": {
+        "type": "visible"
+      }
+    },
+    {
+      "identifier": "apiKey",
+      "type": "text",
+      "title": "API Key",
+      "desc": "Claude API Key",
+      "textConfig": {
+        "type": "secure"
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# openai-translate.bobplugin
+# OpenAI Translator Plugin
 
 使用 Azure OpenAI + Cloudflare AI Gateway 进行翻译或润色。
 
